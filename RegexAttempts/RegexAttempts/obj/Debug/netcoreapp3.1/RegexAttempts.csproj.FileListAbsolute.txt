@@ -1,0 +1,13 @@
+C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\bin\Debug\netcoreapp3.1\RegexAttempts.exe
+C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\bin\Debug\netcoreapp3.1\RegexAttempts.deps.json
+C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\bin\Debug\netcoreapp3.1\RegexAttempts.runtimeconfig.json
+C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\bin\Debug\netcoreapp3.1\RegexAttempts.runtimeconfig.dev.json
+C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\bin\Debug\netcoreapp3.1\RegexAttempts.dll
+C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\bin\Debug\netcoreapp3.1\RegexAttempts.pdb
+C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.AssemblyInfoInputs.cache
+C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.AssemblyInfo.cs
+C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.csproj.CoreCompileInputs.cache
+C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.dll
+C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.pdb
+C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.genruntimeconfig.cache
+C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.csprojAssemblyReference.cache
