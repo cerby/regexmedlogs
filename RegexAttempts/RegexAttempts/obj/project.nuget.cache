@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "N4RFMiJT6PiJzt1swbZViuX2qJLaY1qmK3HC6Hgz2EE91sPAxR7q8Ivjj3dyeTYWowAGjdU94ZvhUlJmbuhEvA==",
+  "dgSpecHash": "ZkAtH5vnfQxHNQ+TiLcAY96RRQ+uRfisgp2TxeWcjOJOFwQzW8V67iPaAOSt+1oV68ZCDL97Unsz2naIIs8aEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\cerbe\\source\\repos\\RegexAttempts\\RegexAttempts\\RegexAttempts.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\cerbe\\.nuget\\packages\\maxmind.db\\2.6.1\\maxmind.db.2.6.1.nupkg.sha512",
+    "C:\\Users\\cerbe\\.nuget\\packages\\maxmind.geoip2\\3.3.0\\maxmind.geoip2.3.3.0.nupkg.sha512",
+    "C:\\Users\\cerbe\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\cerbe\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.8\\microsoft.extensions.dependencyinjection.abstractions.3.1.8.nupkg.sha512",
+    "C:\\Users\\cerbe\\.nuget\\packages\\microsoft.extensions.options\\3.1.8\\microsoft.extensions.options.3.1.8.nupkg.sha512",
+    "C:\\Users\\cerbe\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.8\\microsoft.extensions.primitives.3.1.8.nupkg.sha512",
+    "C:\\Users\\cerbe\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
