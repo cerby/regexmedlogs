@@ -18,3 +18,9 @@ C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\bin\Debug\netcoreapp3.1\
 C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.csproj.CoreCompileInputs.cache
 C:\Users\cerbe\source\repos\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.csproj.CopyComplete
+C:\Users\cerbe\Documents\GitHub\regexmedlogs\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.csprojAssemblyReference.cache
+C:\Users\cerbe\Documents\GitHub\regexmedlogs\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.AssemblyInfoInputs.cache
+C:\Users\cerbe\Documents\GitHub\regexmedlogs\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.AssemblyInfo.cs
+C:\Users\cerbe\Documents\GitHub\regexmedlogs\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.csproj.CoreCompileInputs.cache
+C:\Users\cerbe\Documents\GitHub\regexmedlogs\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.dll
+C:\Users\cerbe\Documents\GitHub\regexmedlogs\RegexAttempts\RegexAttempts\obj\Debug\netcoreapp3.1\RegexAttempts.pdb

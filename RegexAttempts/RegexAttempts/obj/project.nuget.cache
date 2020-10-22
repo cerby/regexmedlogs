@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZkAtH5vnfQxHNQ+TiLcAY96RRQ+uRfisgp2TxeWcjOJOFwQzW8V67iPaAOSt+1oV68ZCDL97Unsz2naIIs8aEw==",
+  "dgSpecHash": "dsByRxlHMRG6UiiIl9XN+2tB29XsuSr6M9+dFyMJCPQcbcX0divH0DTecK1bBdnltasqb2gzo0w/VLjwbV8Lqg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cerbe\\source\\repos\\RegexAttempts\\RegexAttempts\\RegexAttempts.csproj",
+  "projectFilePath": "C:\\Users\\cerbe\\Documents\\GitHub\\regexmedlogs\\RegexAttempts\\RegexAttempts\\RegexAttempts.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cerbe\\.nuget\\packages\\maxmind.db\\2.6.1\\maxmind.db.2.6.1.nupkg.sha512",
     "C:\\Users\\cerbe\\.nuget\\packages\\maxmind.geoip2\\3.3.0\\maxmind.geoip2.3.3.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cerbe\\source\\repos\\RegexAttempts\\RegexAttempts\\RegexAttempts.csproj": {}
+    "C:\\Users\\cerbe\\Documents\\GitHub\\regexmedlogs\\RegexAttempts\\RegexAttempts\\RegexAttempts.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cerbe\\source\\repos\\RegexAttempts\\RegexAttempts\\RegexAttempts.csproj": {
+    "C:\\Users\\cerbe\\Documents\\GitHub\\regexmedlogs\\RegexAttempts\\RegexAttempts\\RegexAttempts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cerbe\\source\\repos\\RegexAttempts\\RegexAttempts\\RegexAttempts.csproj",
+        "projectUniqueName": "C:\\Users\\cerbe\\Documents\\GitHub\\regexmedlogs\\RegexAttempts\\RegexAttempts\\RegexAttempts.csproj",
         "projectName": "RegexAttempts",
-        "projectPath": "C:\\Users\\cerbe\\source\\repos\\RegexAttempts\\RegexAttempts\\RegexAttempts.csproj",
+        "projectPath": "C:\\Users\\cerbe\\Documents\\GitHub\\regexmedlogs\\RegexAttempts\\RegexAttempts\\RegexAttempts.csproj",
         "packagesPath": "C:\\Users\\cerbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cerbe\\source\\repos\\RegexAttempts\\RegexAttempts\\obj\\",
+        "outputPath": "C:\\Users\\cerbe\\Documents\\GitHub\\regexmedlogs\\RegexAttempts\\RegexAttempts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cerbe\\AppData\\Roaming\\NuGet\\NuGet.Config",

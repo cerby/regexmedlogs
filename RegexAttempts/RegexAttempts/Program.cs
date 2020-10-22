@@ -13,24 +13,26 @@ namespace RegexAttempts
     {
         static void Main(string[] args)
         {
-            Regex IPaddress = new Regex(@"\b(?:\d{1,3}\.){3}\d{1,3}\b");
-            //string regexIP = @"\b(?:\d{1,3}\.){3}\d{1,3}\b";
-            //string regextimestamp = @"(?P<timestamp>\d{2}\/\\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} (\+|\-)\d{4})";
-            Regex Timestamp = new Regex(@"\d{2}\/\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} (\+|\-)\d{4}");
-            Regex IPandTimestamp = new Regex(@"\b(?:\d{1,3}\.){3}\d{1,3}\b - - \[\d{2}\/\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} (\+|\-)\d{4}\] ");
-            //string IpTimestamppattern = @"\b(?:\d{1,3}\.){3}\d{1,3}\b - - \[\d{2}\/\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} (\+|\-)\d{4}\]";
-            //DatabaseReader ipcountry = new DatabaseReader(@"C:\Users\cerbe\Downloads\maxmind\GeoLite2-Country.mmdb");
-            //DatabaseReader ipASN = new DatabaseReader(@"C:\Users\cerbe\Downloads\maxmind\GeoLite2-ASN.mmdb");
-            //int linecount = File.ReadLines(@"C:\yek\access.log").Count();
             Logfileentries logfileentry = new Logfileentries();
             List<Logfileentries> logfiles = new List<Logfileentries>();
-            string hostname = "";
-            
+            string MMcountrydbpath = "";
+            string MMAsndbpath = "";
+            string logpath1 = "";
+            string logpath2 = "";
+            string logpath3 = "";
 
+            logfiles.AddRange(logfilesentry(MMcountrydbpath, MMAsndbpath, logpath1));
+            logfiles.AddRange(logfilesentry(MMcountrydbpath, MMAsndbpath, logpath2));
+            logfiles.AddRange(logfilesentry(MMcountrydbpath, MMAsndbpath, logpath3));
+            foreach (Logfileentries log in logfiles)
+            {
+                Console.WriteLine(log.Logipaddress+"||"+log.Logtimestamp+"||"+log.Logmethod+"||"+log.Logcountry+"||"+log.LogASN+"||"+log.LogDNS);
+            }
         }
-        public List<Logfileentries> logfilesentry(string dbcountrypath, string dbasnpath, string logpath, List<Logfileentries> logentries)
+        public static List<Logfileentries> logfilesentry(string dbcountrypath, string dbasnpath, string logpath)
         {
             Logfileentries logfileentry = new Logfileentries();
+            List<Logfileentries> logentries = new List<Logfileentries>();
             Regex IPaddress = new Regex(@"\b(?:\d{1,3}\.){3}\d{1,3}\b");
             Regex Timestamp = new Regex(@"\d{2}\/\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} (\+|\-)\d{4}");
             Regex IPandTimestamp = new Regex(@"\b(?:\d{1,3}\.){3}\d{1,3}\b - - \[\d{2}\/\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} (\+|\-)\d{4}\] ");
