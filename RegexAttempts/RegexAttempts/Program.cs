@@ -18,45 +18,45 @@ namespace RegexAttempts
             //string regextimestamp = @"(?P<timestamp>\d{2}\/\\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} (\+|\-)\d{4})";
             Regex Timestamp = new Regex(@"\d{2}\/\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} (\+|\-)\d{4}");
             Regex IPandTimestamp = new Regex(@"\b(?:\d{1,3}\.){3}\d{1,3}\b - - \[\d{2}\/\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} (\+|\-)\d{4}\] ");
-            string IpTimestamppattern = @"\b(?:\d{1,3}\.){3}\d{1,3}\b - - \[\d{2}\/\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} (\+|\-)\d{4}\]";
-            DatabaseReader ipcountry = new DatabaseReader(@"C:\Users\cerbe\Downloads\maxmind\GeoLite2-Country.mmdb");
-            DatabaseReader ipASN = new DatabaseReader(@"C:\Users\cerbe\Downloads\maxmind\GeoLite2-ASN.mmdb");
+            //string IpTimestamppattern = @"\b(?:\d{1,3}\.){3}\d{1,3}\b - - \[\d{2}\/\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} (\+|\-)\d{4}\]";
+            //DatabaseReader ipcountry = new DatabaseReader(@"C:\Users\cerbe\Downloads\maxmind\GeoLite2-Country.mmdb");
+            //DatabaseReader ipASN = new DatabaseReader(@"C:\Users\cerbe\Downloads\maxmind\GeoLite2-ASN.mmdb");
             //int linecount = File.ReadLines(@"C:\yek\access.log").Count();
             Logfileentries logfileentry = new Logfileentries();
             List<Logfileentries> logfiles = new List<Logfileentries>();
             string hostname = "";
-            foreach(String line in File.ReadLines(@"C:\yek\access.log"))
+            
+
+        }
+        public List<Logfileentries> logfilesentry(string dbcountrypath, string dbasnpath, string logpath, List<Logfileentries> logentries)
+        {
+            Logfileentries logfileentry = new Logfileentries();
+            Regex IPaddress = new Regex(@"\b(?:\d{1,3}\.){3}\d{1,3}\b");
+            Regex Timestamp = new Regex(@"\d{2}\/\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} (\+|\-)\d{4}");
+            Regex IPandTimestamp = new Regex(@"\b(?:\d{1,3}\.){3}\d{1,3}\b - - \[\d{2}\/\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} (\+|\-)\d{4}\] ");
+            DatabaseReader ipcountry = new DatabaseReader(dbcountrypath);
+            DatabaseReader ipASN = new DatabaseReader(dbasnpath);
+            string hostname = "";
+            foreach (var line in File.ReadLines(logpath))
             {
                 Match iptimestamp = IPandTimestamp.Match(line);
                 Match ipaddress = IPaddress.Match(iptimestamp.Value);
                 Match timestamp = Timestamp.Match(iptimestamp.Value);
                 CountryResponse countryresponse = ipcountry.Country(ipaddress.Value);
                 AsnResponse ASNresponse = ipASN.Asn(ipaddress.Value);
-                try
-                {
-                    hostname = Dns.GetHostEntry(ipaddress.Value).HostName;
-                }
-                catch (SocketException)
-                {
-                  
-                }
-                if (hostname == "")
-                {
-                    hostname = "unknown domain";
-                }
-                string[] logmethod = Regex.Split(line, IpTimestamppattern); //kun interesseret i pos 2
-                Console.WriteLine("iptimestamp {0} \n ipadresse {1} \n timestamp {2} \n method {3}",iptimestamp.Value,ipaddress.Value,timestamp.Value, logmethod[2]);
-                Console.WriteLine("country {0} \n ASN {1} \n DNS {2}", countryresponse.Country,ASNresponse.AutonomousSystemOrganization, hostname);
+                try{ hostname = Dns.GetHostEntry(ipaddress.Value).HostName; }
+                catch (SocketException){}
+                if (hostname == ""){ hostname = "unknown domain";}
+                string[] logmethod = Regex.Split(line, IPandTimestamp.ToString());
                 logfileentry.Logipaddress = ipaddress.Value;
                 logfileentry.Logtimestamp = iptimestamp.Value;
                 logfileentry.Logmethod = logmethod[2];
                 logfileentry.Logcountry = countryresponse.Country.ToString();
                 logfileentry.LogASN = ASNresponse.AutonomousSystemOrganization.ToString();
                 logfileentry.LogDNS = hostname;
-                logfiles.Add(logfileentry);
+                logentries.Add(logfileentry);
             }
-            //Console.WriteLine(linecount);
-
+            return logentries;
         }
     }
 
