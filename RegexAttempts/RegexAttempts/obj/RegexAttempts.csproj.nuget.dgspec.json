@@ -41,6 +41,10 @@
             "MaxMind.GeoIP2": {
               "target": "Package",
               "version": "[3.3.0, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.113.1, )"
             }
           },
           "imports": [

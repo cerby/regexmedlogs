@@ -6,6 +6,9 @@ using MaxMind.GeoIP2;
 using System.Net;
 using MaxMind.GeoIP2.Responses;
 using System.Net.Sockets;
+using System.Data.SQLite;
+using System.Data.Common;
+
 
 namespace RegexAttempts
 {
@@ -15,19 +18,44 @@ namespace RegexAttempts
         {
             Logfileentries logfileentry = new Logfileentries();
             List<Logfileentries> logfiles = new List<Logfileentries>();
-            string MMcountrydbpath = "";
-            string MMAsndbpath = "";
-            string logpath1 = "";
-            string logpath2 = "";
-            string logpath3 = "";
+            string MMcountrydbpath = @"C:\Users\cerbe\Downloads\maxmind\GeoLite2-Country.mmdb";
+            string MMAsndbpath = @"C:\Users\cerbe\Downloads\maxmind\GeoLite2-ASN.mmdb";
+            string logpath1 = @"C:\yek\accesslogcombinedamazon.log";
+            string logpath2 = @"C:\yek\accesslogcombinedfrankfurt.log";
+            string logpath3 = @"C:\yek\accesslogcombinedlondon.log";
 
             logfiles.AddRange(logfilesentry(MMcountrydbpath, MMAsndbpath, logpath1));
+            Console.WriteLine("amazon added");
             logfiles.AddRange(logfilesentry(MMcountrydbpath, MMAsndbpath, logpath2));
+            Console.WriteLine("frankfurt added");
             logfiles.AddRange(logfilesentry(MMcountrydbpath, MMAsndbpath, logpath3));
+            Console.WriteLine("london added");
+            int counter = 0;
+            SQLiteConnection connection = new SQLiteConnection(@"Data Source=C:\yek\Nginx logs.db");
+            connection.Open();
+            SQLiteCommand insertSQL = new SQLiteCommand("INSERT INTO Accesslogs (AccessID, IPAddress, Timestamp, Logmethod, Logcountry, LogASN, LogDNS");
+            //SqliteConnection connection = new SqliteConnection(@"Data Source=C:\yek\Nginx logs.db");
+            //connection.Open();
+            Console.WriteLine("connection open");
+            //SqliteCommand insertSQL = new SqliteCommand("INSERT INTO Accesslogs (AccessID, IPAddress, Timestamp, Logmethod, Logcountry, LogASN, LogDNS");
             foreach (Logfileentries log in logfiles)
             {
-                Console.WriteLine(log.Logipaddress+"||"+log.Logtimestamp+"||"+log.Logmethod+"||"+log.Logcountry+"||"+log.LogASN+"||"+log.LogDNS);
+                Console.WriteLine(counter);                
+                //Console.WriteLine(log.Logipaddress+"||"+log.Logtimestamp+"||"+log.Logmethod+"||"+log.Logcountry+"||"+log.LogASN+"||"+log.LogDNS);
+                
+                insertSQL.Parameters.Add(counter.ToString());
+                insertSQL.Parameters.Add(log.Logipaddress);
+                insertSQL.Parameters.Add(log.Logtimestamp);
+                insertSQL.Parameters.Add(log.Logmethod);
+                insertSQL.Parameters.Add(log.Logcountry);
+                insertSQL.Parameters.Add(log.LogASN);
+                insertSQL.Parameters.Add(log.LogDNS);
+                insertSQL.ExecuteNonQuery();
+                
+                counter = counter + 1;
             }
+            connection.Close();
+            Console.WriteLine("connection closed");
         }
         public static List<Logfileentries> logfilesentry(string dbcountrypath, string dbasnpath, string logpath)
         {
@@ -44,6 +72,7 @@ namespace RegexAttempts
                 Match iptimestamp = IPandTimestamp.Match(line);
                 Match ipaddress = IPaddress.Match(iptimestamp.Value);
                 Match timestamp = Timestamp.Match(iptimestamp.Value);
+                //Console.WriteLine(ipaddress.Value);
                 CountryResponse countryresponse = ipcountry.Country(ipaddress.Value);
                 AsnResponse ASNresponse = ipASN.Asn(ipaddress.Value);
                 try{ hostname = Dns.GetHostEntry(ipaddress.Value).HostName; }
